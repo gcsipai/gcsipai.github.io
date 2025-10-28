@@ -13,19 +13,18 @@
         :root {
             --bs-primary: #0d6efd; /* Bootstrap alap kék */
             --bs-info: #0dcaf0;    /* Cián kiemelés */
-            --bs-dark: #212529;    
         }
         body {
             font-family: 'Roboto', sans-serif;
         }
         .bg-light-custom { background-color: #f8f9fa; }
-        .text-info-custom { color: var(--bs-info); }
         .border-info-custom { border-color: var(--bs-info) !important; }
         .repo-card { transition: transform 0.3s, box-shadow 0.3s; border: none; }
         .repo-card:hover { 
             transform: translateY(-5px); 
             box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1) !important; 
         }
+        /* Megerősítettem az ikonos kártya és csoportcím flex elrendezését */
         .competency-card { 
             border-left: 5px solid var(--bs-primary);
             transition: box-shadow 0.3s;
@@ -41,10 +40,11 @@
             border-bottom: 2px solid #eee;
             padding-bottom: 5px;
             margin-bottom: 15px;
+            display: flex; /* Fix a csoportcím ikon elcsúszására */
+            align-items: center;
         }
-        /* ÚJ FEJLÉC STÍLUS: Világos, letisztult, kiemeléssel */
         .header-custom {
-            background-color: #ffffff; /* Fehér háttér */
+            background-color: #ffffff;
             color: var(--bs-dark);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
@@ -82,7 +82,7 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="bg-white p-3 rounded shadow-sm competency-card">
-                                <i class="fab fa-linux fa-2x text-info-custom me-3"></i>
+                                <i class="fab fa-linux fa-2x text-info me-3"></i>
                                 <div>
                                     <p class="fw-bold mb-0">Linux Rendszerek</p>
                                     <small class="text-muted">Debian, Ubuntu, RedHat, AlmaLinux</small>
@@ -117,7 +117,7 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="bg-white p-3 rounded shadow-sm competency-card">
-                                <i class="fas fa-router fa-2x text-success me-3"></i>
+                                <i class="fas fa-hdd fa-2x text-success me-3"></i> 
                                 <div>
                                     <p class="fw-bold mb-0">Hálózati Hardverek</p>
                                     <small class="text-muted">MikroTik, Ubiquiti, Cisco, Zyxel, D-Link</small>
