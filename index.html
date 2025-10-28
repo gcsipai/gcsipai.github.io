@@ -5,123 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gcsipai - Rendszergazda és Fejlesztői Portfólió</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-dark': '#0f172a',    /* Sötétkék (Header/Footer) */
-                        'accent-color': '#06b6d4',    /* Élénk Cián (kiemelés) */
-                        'text-light': '#f1f5f9',      /* Világos szöveg */
-                    }
-                }
-            }
+    <style>
+        :root {
+            --bs-primary: #0d6efd; /* Bootstrap alap kék */
+            --bs-info: #0dcaf0;    /* Cián kiemelés */
+            --bs-dark: #212529;    /* Sötét szöveg/elemek */
         }
-    </script>
-
+        .text-info-custom { color: var(--bs-info); }
+        .border-info-custom { border-color: var(--bs-info) !important; }
+        .bg-light-custom { background-color: #f8f9fa; }
+        .repo-card { transition: transform 0.3s, box-shadow 0.3s; }
+        .repo-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; 
+        }
+        .language-tag { font-size: 0.8em; }
+    </style>
 </head>
-<body class="bg-gray-900 text-text-light min-h-screen font-sans">
+<body class="bg-light-custom">
 
-    <header class="bg-primary-dark shadow-xl">
-        <div class="container mx-auto px-4 py-10 border-b-4 border-accent-color">
+    <header class="bg-dark text-white shadow-lg mb-5">
+        <div class="container py-4 border-bottom border-4 border-info-custom">
             <div class="text-center">
-                <i class="fas fa-server text-6xl text-accent-color mb-4"></i>
-                     
-                <h1 class="text-5xl font-extrabold text-white tracking-tight">
-                    gcsipai - Rendszergazda & Fejlesztő
-                </h1>
-                <p class="text-xl text-gray-400 mt-2">Stabil, biztonságos, hatékony IT környezet</p>
+                <i class="fas fa-server text-info-custom mb-3" style="font-size: 3rem;"></i>
+                <h1 class="display-5 fw-bold">gcsipai - Rendszergazda & Fejlesztő</h1>
+                <p class="lead text-secondary">Stabil, biztonságos, hatékony IT környezet</p>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-12">
+    <main class="container">
         
-        <section class="mb-16 bg-gray-800 p-8 rounded-lg shadow-2xl border-l-4 border-accent-color">
-            <h2 class="text-3xl font-bold text-accent-color mb-4">
-                Több Mint Egy Évtizedes Tapasztalat
-            </h2>
-            <p class="text-gray-300 leading-relaxed text-lg italic">
+        <section class="mb-5 p-4 bg-white rounded shadow-sm border-start border-4 border-primary">
+            <h2 class="h3 fw-bold text-dark mb-3">Több Mint Egy Évtizedes Tapasztalat</h2>
+            <p class="text-muted lead fst-italic">
                 Több mint **13 éves tapasztalattal** rendelkező rendszergazda vagyok, aki a **kis- és középvállalati (KKV), önkormányzati és oktatási** szférában tevékenykedik. Célom a **stabil, biztonságos és hatékony** informatikai környezet kialakítása és fenntartása.
             </p>
         </section>
 
+        <section class="mb-5">
+            <h2 class="h4 fw-bold text-dark border-bottom pb-2 mb-4">Kulcskompetenciák & Technológiai Fókusz</h2>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 rounded shadow-sm">
+                        <i class="fab fa-linux fa-2x text-info-custom me-3"></i>
+                        <div>
+                            <p class="fw-bold mb-0">Linux Rendszerek</p>
+                            <small class="text-muted">Debian, Ubuntu, RedHat, CentOS/AlmaLinux</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 rounded shadow-sm">
+                        <i class="fab fa-windows fa-2x text-primary me-3"></i>
+                        <div>
+                            <p class="fw-bold mb-0">Windows Server & Kliens</p>
+                            <small class="text-muted">Active Directory, Group Policy, PowerShell</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 rounded shadow-sm">
+                        <i class="fas fa-network-wired fa-2x text-success me-3"></i>
+                        <div>
+                            <p class="fw-bold mb-0">Hálózatok & Virtualizáció</p>
+                            <small class="text-muted">Routing, Firewall, VMware, Hyper-V</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center bg-white p-3 rounded shadow-sm">
+                        <i class="fas fa-terminal fa-2x text-dark me-3"></i>
+                        <div>
+                            <p class="fw-bold mb-0">Automatizálás & Szkriptelés</p>
+                            <small class="text-muted">PowerShell, Shell scripting, Python</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section>
-            <h2 class="text-4xl font-bold text-accent-color border-b-2 border-gray-700 pb-3 mb-8">
-                Technikai Projektek és Megoldások
-            </h2>
-            <div id="repo-list" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                <div id="loading-message" class="col-span-full text-center p-10 text-xl text-accent-color font-semibold">
-                    <i class="fas fa-spinner fa-spin mr-2"></i> Repository-k betöltése... Kérlek várj.
+            <h2 class="h4 fw-bold text-dark border-bottom pb-2 mb-4">Technikai Projektek és Megoldások</h2>
+            <div id="repo-list" class="row g-4">
+                <div id="loading-message" class="col-12 text-center p-5 text-primary fw-bold">
+                    <i class="fas fa-spinner fa-spin me-2"></i> Repository-k betöltése... Kérlek várj.
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-primary-dark mt-16">
-        <div class="container mx-auto px-4 py-6 text-center text-gray-500 text-sm">
-            <p>&copy; 2024 gcsipai Portfólió • Elérhetőség: GitHub</p>
+    <footer class="bg-dark text-white mt-5 py-3">
+        <div class="container text-center text-secondary">
+            <p class="mb-0">&copy; 2024 gcsipai Portfólió • Statikusan a GitHub Pages-en.</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const username = 'gcsipai'; 
             const repoListElement = document.getElementById('repo-list');
             const loadingMessage = document.getElementById('loading-message');
-            const apiURL = `https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=9`;
+            const apiURL = `https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=15`;
+            
+            // Kért projekt, amit ki kell szűrni
+            const excludedRepo = 'mpve'; 
 
-            // Színleképezés a Tailwind osztályokkal a nyelv jelvényhez
+            // Színleképezés a jelvényekhez
             const languageColorMap = {
-                'JavaScript': 'bg-yellow-600',
-                'Python': 'bg-blue-600',
-                'HTML': 'bg-red-600',
-                'CSS': 'bg-indigo-600',
-                'TypeScript': 'bg-sky-600',
-                'C#': 'bg-purple-600',
-                'Java': 'bg-orange-600',
-                'default': 'bg-gray-600'
+                'Shell': 'bg-success',
+                'PowerShell': 'bg-primary',
+                'Python': 'bg-warning text-dark',
+                'N/A': 'bg-secondary',
+                'default': 'bg-light text-dark'
+            };
+            
+            // Ikonok leképezése a nyelvhez
+            const languageIconMap = {
+                'Shell': 'fas fa-terminal',
+                'PowerShell': 'fab fa-windows',
+                'Python': 'fab fa-python',
+                'N/A': 'fas fa-code',
+                'default': 'fas fa-code'
             };
 
-            function createRepoCard(repo) {
-                const repoCard = document.createElement('div');
-                // Professzionális kártya dizájn
-                repoCard.className = 'bg-gray-800 rounded-xl shadow-2xl p-6 transition duration-300 ease-in-out hover:shadow-accent-color/50 hover:-translate-y-1 flex flex-col justify-between border-t-4 border-accent-color';
 
-                const description = repo.description || 'Nincs részletes leírás ehhez a repository-hoz.';
-                const lastUpdated = new Date(repo.updated_at).toLocaleDateString('hu-HU', { year: 'numeric', month: 'short', day: 'numeric' });
+            function createRepoCard(repo) {
+                const repoCardContainer = document.createElement('div');
+                repoCardContainer.className = 'col-md-6 col-lg-4';
+
                 const language = repo.language || 'N/A';
                 const langColorClass = languageColorMap[language] || languageColorMap['default'];
+                const langIconClass = languageIconMap[language] || languageIconMap['default'];
 
-                repoCard.innerHTML = `
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-3">
-                            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="text-accent-color hover:text-white transition duration-200">
-                                ${repo.name}
-                            </a>
-                        </h3>
-                        <p class="text-gray-400 text-sm mb-4 line-clamp-3">${description}</p>
-                    </div>
-                    
-                    <div class="mt-4 pt-4 border-t border-gray-700 flex justify-between items-center text-sm">
-                        <span class="px-3 py-1 rounded-full font-medium text-white ${langColorClass}">
-                            ${language}
-                        </span>
-                        
-                        <div class="space-x-4 text-gray-400">
-                            <span title="Csillagok száma">
-                                <i class="fas fa-star mr-1 text-yellow-400"></i> ${repo.stargazers_count}
-                            </span>
-                            <span title="Utolsó frissítés">
-                                <i class="fas fa-calendar-alt mr-1"></i> ${lastUpdated}
-                            </span>
+                const description = repo.description || 'Nincs leírás megadva ehhez a projekthez.';
+                const lastUpdated = new Date(repo.updated_at).toLocaleDateString('hu-HU', { year: 'numeric', month: 'short', day: 'numeric' });
+
+                repoCardContainer.innerHTML = `
+                    <div class="card h-100 repo-card border-info-custom shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-primary fw-bold">
+                                <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-primary hover-link">
+                                    ${repo.name}
+                                </a>
+                            </h5>
+                            <p class="card-text text-muted small">${description}</p>
+                            <div class="mt-auto pt-3 border-top">
+                                <span class="badge ${langColorClass} language-tag me-3">
+                                    <i class="${langIconClass} me-1"></i> ${language}
+                                </span>
+                                
+                                <span class="text-secondary small me-3" title="Csillagok száma">
+                                    <i class="fas fa-star me-1 text-warning"></i> ${repo.stargazers_count}
+                                </span>
+                                <span class="text-secondary small" title="Utolsó frissítés">
+                                    <i class="fas fa-calendar-alt me-1"></i> ${lastUpdated}
+                                </span>
+                            </div>
                         </div>
                     </div>
                 `;
-                return repoCard;
+                return repoCardContainer;
             }
 
             fetch(apiURL)
@@ -131,18 +180,23 @@
                 })
                 .then(repositories => {
                     if (loadingMessage) loadingMessage.remove();
-                    if (repositories.length === 0) {
-                        repoListElement.innerHTML = '<p class="col-span-full text-center text-gray-400">Nincsenek publikus repository-k a megjelenítéshez.</p>';
+
+                    // Szűrés a kért repo név alapján
+                    const filteredRepos = repositories.filter(repo => repo.name.toLowerCase() !== excludedRepo.toLowerCase());
+
+                    if (filteredRepos.length === 0) {
+                        repoListElement.innerHTML = '<div class="col-12 text-center text-muted p-5">Nincsenek publikus repository-k a megjelenítéshez.</div>';
                         return;
                     }
-                    repositories.forEach(repo => {
+
+                    filteredRepos.forEach(repo => {
                         repoListElement.appendChild(createRepoCard(repo));
                     });
                 })
                 .catch(error => {
                     console.error('Hiba történt a repository-k betöltésekor:', error);
                     if (loadingMessage) loadingMessage.remove();
-                    repoListElement.innerHTML = `<p class="col-span-full text-center p-10 text-red-500">Hiba a betöltés közben. Ellenőrizd a felhasználónevet vagy a konzolt! (${error.message})</p>`;
+                    repoListElement.innerHTML = `<div class="col-12 text-center p-5 text-danger">Hiba a betöltés közben. Ellenőrizd a konzolt! (${error.message})</div>`;
                 });
         });
     </script>
